@@ -1,0 +1,24 @@
+{
+  "id": null,
+  "uid": "test-dashboard",
+  "title": "Fake Dashboard",
+  "tags": ["test"],
+  "timezone": "browser",
+  "schemaVersion": 16,
+  "version": 1,
+  "panels": [
+    {
+      "id": 1,
+      "type": "table",
+      "title": "Fake Log Data",
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 8 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": "TestData DB",
+          "scenarioId": "random_walk"
+        }
+      ]
+    }
+  ]
+}
