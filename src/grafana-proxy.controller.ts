@@ -47,7 +47,7 @@ export class GrafanaProxyController {
                         queryParams.append(key, grafanaProxyConfig.DEFAULT_QUERY[key]);
                     });
 
-                    proxyReq.path = `/d-solo/main-dashboard?${queryParams.toString()}`;
+                    proxyReq.path = `/d-solo/${grafanaProxyConfig.DASHBOARD}?${queryParams.toString()}`;
                 },
             },
             ws: true, // Proxy websockets
