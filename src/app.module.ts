@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AuthGuard } from './auth.guard';
+import { GrafanaProxyController } from './grafana-proxy.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, GrafanaProxyController],
+  providers: [AuthGuard],
 })
-export class AppModule {}
+export class AppModule { }
