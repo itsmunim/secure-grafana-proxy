@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, HttpStatus, Post, Res } from '@nestjs/common';
+import { TEST_USER, USER_COOKIE_NAME } from './auth.guard';
+import { Response } from 'express';
 
-@Controller()
+@Controller('api')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  @Post('login')
+  async login(@Res() response: Response) {
+    const userString = JSON.stringify(TEST_USER);
+    const encodedUser = Buffer.from(userString).toString('base64');
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+    response.cookie(USER_COOKIE_NAME, encodedUser, {
+      httpOnly: true,
+      sameSite: 'strict',
+    });
+
+    return response.status(HttpStatus.OK).json({
+      message: 'Login successful',
+    });
   }
 }

@@ -1,8 +1,8 @@
 {
   "id": null,
-  "uid": "test-dashboard",
+  "uid": "main-dashboard",
   "title": "Fake Dashboard",
-  "tags": ["test"],
+  "tags": ["test", "logs"],
   "timezone": "browser",
   "schemaVersion": 16,
   "version": 1,

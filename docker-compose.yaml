@@ -9,4 +9,5 @@ services:
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true  # Allows anonymous access (optional)
       - GF_SECURITY_ADMIN_PASSWORD=admin
-      - GF_SECURITY_ALLOW_EMBEDDING=true  # ✅ Enable embedding
+      - GF_SECURITY_ALLOW_EMBEDDING=true  # Enable embedding
+
